@@ -55,10 +55,10 @@ header,nav,article,footer { display: block; }
 
 }
 body {
-    font-family:droid_sansregular,roboto_regular,calibri,helvetica,tahoma,arial,sans-serif;
+    font-family:'Droid Sans',droid_sansregular,roboto_regular,calibri,helvetica,tahoma,arial,sans-serif;
 }
 h1 {
-    font-family:roboto_thregular,roboto_ltregular,droid_sansregular,roboto_regular,calibri,helvetica,tahoma,arial,sans-serif;
+    font-family:'Roboto',roboto_thregular,roboto_ltregular,droid_sansregular,roboto_regular,calibri,helvetica,tahoma,arial,sans-serif;
     font-weight:100;
 }
 
