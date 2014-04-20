@@ -56,12 +56,54 @@ header,nav,article,footer { display: block; }
 }
 body {
     font-family:'Droid Sans',droid_sansregular,roboto_regular,calibri,helvetica,tahoma,arial,sans-serif;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 h1 {
     font-family:'Roboto',roboto_thregular,roboto_ltregular,droid_sansregular,roboto_regular,calibri,helvetica,tahoma,arial,sans-serif;
     font-weight:100;
 }
+header h1 {
+    font-size:3rem;
+    width:30%;
+    border-bottom:2px solid black;
+    padding-left:1rem;
+    margin-left:1rem;
+}
+#container
+{    
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 0;
 
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    overflow: hidden;
+}
+
+article,nav
+{   
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 0 0;
+
+    overflow: auto;
+    float:left;
+}
+article {
+    border:1px solid green;
+}
+nav {
+    width:25%;
+    border:1px solid black;
+}
 
 /* Helpers */
 .hide {
