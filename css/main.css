@@ -74,6 +74,7 @@ header h1 {
     border-bottom:2px solid black;
     padding-left:1rem;
     margin-left:1rem;
+    margin-bottom:.5rem;
 }
 #container
 {    

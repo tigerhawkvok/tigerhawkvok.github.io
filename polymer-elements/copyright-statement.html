@@ -15,7 +15,7 @@
             this.thisYear = new Date().getFullYear();
             if(this.copyrightStart != null) {
                 if(parseInt(this.copyrightStart) < this.thisYear) {
-                    this.copyrightStart = this.copyrightStart + " &#8212; ";
+                    this.copyrightStart = this.copyrightStart + " \u2014 ";
                 } else {
                     this.copyrightStart = "";
                 }
