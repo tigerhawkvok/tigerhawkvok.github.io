@@ -75,6 +75,7 @@ header h1 {
     padding-left:1rem;
     margin-left:1rem;
     margin-bottom:.5rem;
+    float:left;
 }
 #container
 {    
@@ -101,6 +102,7 @@ nav {
     flex: .3 0 0;
     background: #5677fc;
     color:white;
+    opacity:1!important;
 }
 .materialindigo {
     background: #3f51b5;
