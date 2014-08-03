@@ -1,0 +1,26 @@
+<link rel="import" href="../bower_components/polymer/polymer.html"/>
+<polymer-element name="copyright-statement" attributes="copyrightStart">
+  <template>
+    <span>
+      &#169; {{copyrightStart}}{{thisYear}}
+    </span>
+  </template>
+  <script>
+    Polymer('copyright-statement',{
+        copyrightStart:2014,
+        created: function() {
+            console.log("The copyright-statement has been registered.");
+        },
+        ready: function() {
+            this.thisYear = new Date().getFullYear();
+            if(this.copyrightStart != null) {
+                if(parseInt(this.copyrightStart) < this.thisYear) {
+                    this.copyrightStart = this.copyrightStart + " &#8212; ";
+                } else {
+                    this.copyrightStart = "";
+                }
+            }
+        }
+    });
+  </script>
+</polymer-element>

@@ -98,6 +98,23 @@ article {
 }
 nav {
     flex: .3 0 0;
+    background: #5677fc;
+    color:white;
+}
+.materialindigo {
+    background: #3f51b5;
+}
+
+.materialcyan {
+    background: #00bcd4;
+}
+
+.materialteal {
+    background: #009688;
+}
+
+.materialbluegrey {
+    background: #607d8b;
 }
 
 /* Helpers */
