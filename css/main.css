@@ -95,6 +95,9 @@ article,nav
     overflow: auto;
     float:left;
 }
+paper-menu-button {
+    float:left;
+}
 article {
     flex: 1 0 0;
 }
