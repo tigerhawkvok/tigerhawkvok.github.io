@@ -13,6 +13,13 @@
     <link rel="import" href="bower_components/core-elements/core-elements.html"/>
     <link rel="import" href="polymer-elements/copyright-statement.html"/>
     <script type="text/javascript" src="js/loadJQuery.js"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script>
+      function toggleBTCDialog() {
+      var dialog = document.querySelector('paper-dialog');
+      dialog.toggle();
+      }
+    </script>
   </head>
   <body>
     <header class="materialteal">
@@ -60,9 +67,9 @@
               </form>
             </li>
             <li><a class="coinbase-button" data-code="4c919e5f0c03b0fd84f8b0a78dcc84ab" data-button-style="donation_small" href="https://coinbase.com/checkouts/4c919e5f0c03b0fd84f8b0a78dcc84ab">Donate Bitcoins</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script></li>
-            <li>Direct BTC: <span id='btc'>17WbB5ebHeyLo31KusdsY9wDQewj6dtUzT</span></li>
+            <li><paper-button label="Direct BTC" onclick="ToggleBTCDialog()" raisedButton></paper-button></li>
             </ul>
-          </nav>
+        </nav>
         </paper-menu-button>
       <h1>Philip Kahn</h1>
       <paper-tabs selected="0">
@@ -71,13 +78,17 @@
       </paper-tabs>
     </header>
     <div id='container'>
-
+      <paper-dialog heading="Bitcoin Address"  transition="paper-dialog-transition-bottom" backdrop layered>
+        <span id='btc'>17WbB5ebHeyLo31KusdsY9wDQewj6dtUzT</span>
+        <paper-button label="close" dismissive autofocus></paper-button>
+      </paper-dialog>
       <article>
         <p>
           Things
         </p>
         <paper-button id='testThings' label='Test' raisedButton></paper-button>
         <paper-button id='testThings2' class='colored' label='Test2' raisedButton></paper-button>
+        <div class="g-person" data-href="https://plus.google.com/+PhilipKahn"></div>
       </article>
     </div>
     <footer>
