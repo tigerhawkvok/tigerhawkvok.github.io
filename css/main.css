@@ -181,6 +181,7 @@ footer paper-button:hover {
 }
 #donate,#donate iframe, #donate form, #donate paper-button {
     vertical-align:middle;
+    display:inline-block;
 }
 
 
