@@ -27,7 +27,8 @@ bindEvents = ->
 bindEmail = ->
   $("#send-mail").click ->
     $("#email-form").submit()
-  $("#email-form").submit ->
+  $("#email-form").submit (e) ->
+    e.preventDefault()
     from = $("#email")
     fromName = $("#name")
     message = $("#message")

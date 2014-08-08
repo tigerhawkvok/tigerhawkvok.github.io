@@ -330,8 +330,9 @@ bindEmail = function() {
   $("#send-mail").click(function() {
     return $("#email-form").submit();
   });
-  return $("#email-form").submit(function() {
+  return $("#email-form").submit(function(e) {
     var args, from, fromName, message;
+    e.preventDefault();
     from = $("#email");
     fromName = $("#name");
     message = $("#message");
