@@ -340,9 +340,11 @@ bindEmail = function() {
     console.log("stuff");
     return $.post("bob.html", args, "json").done(function(result) {
       return $("paper-toast").attr("text", "Email sent");
-    }).fail(function(result, error) {
+    }).fail(function(result, failError) {
+      var error;
+      error = "" + result.status + " - " + result.statusText;
       $("paper-toast").attr("text", "Couldn't send the email. Please try again. (The server returned " + error + ")");
-      return console.warn(result, error);
+      return console.warn(result, failError, error);
     }).always(function() {
       return $("paper-toast")[0].show();
     });

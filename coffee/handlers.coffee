@@ -39,9 +39,10 @@ bindEmail = ->
     .done (result) ->
       # Clear
       $("paper-toast").attr("text","Email sent")
-    .fail (result,error) ->
+    .fail (result,failError) ->
+      error = "#{result.status} - #{result.statusText}"
       $("paper-toast").attr("text","Couldn't send the email. Please try again. (The server returned #{error})")
-      console.warn(result,error)
+      console.warn(result,failError,error)
     .always ->
       $("paper-toast")[0].show()
 
