@@ -298,10 +298,9 @@ toggleBTCDialog = function() {
 
 showPGPKey = function() {
   return $.get("tigerhawkvok_pgp_public_key.txt").done(function(result) {
-    var dialog, dialog_text;
+    var dialog;
     dialog = $("#pgp-dialog");
-    dialog_text = $("#pgp-dialog pre");
-    dialog.text(result);
+    $("#pgp-dialog pre").text(result);
     return dialog[0].toggle();
   }).fail(function() {
     return console.error("Could not get PGP key");
