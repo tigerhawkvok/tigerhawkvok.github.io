@@ -108,7 +108,7 @@ nav {
     background: #607d8b;
 }
 .g-person,#___person_0 {
-    float:right;
+    float:right !important;
 }
 /* Helpers */
 .hide {
