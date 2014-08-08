@@ -130,7 +130,7 @@ nav ul {
     color:#fff;
 }
 
-.materialbluetext {
+.materialbluetext, paper-button[affirmative] {
     color:#5677fc;
     
 }
