@@ -321,7 +321,7 @@ paperTabHandlers = function() {
     var dest, qualifiedDest;
     dest = $(this).text().toLowerCase() + ".html";
     qualifiedDest = "page_contents/" + dest;
-    return $(this).onclick(function() {
+    return $(this).click(function() {
       return $.get(qualifiedDest).done(function(result) {
         return $("#primary_content").html(result);
       }).fail(function(result, error) {

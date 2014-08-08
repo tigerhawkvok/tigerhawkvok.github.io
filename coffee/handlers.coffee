@@ -22,7 +22,7 @@ paperTabHandlers = ->
   $("paper-tab").each ->
     dest = $(this).text().toLowerCase() + ".html"
     qualifiedDest = "page_contents/#{dest}"
-    $(this).onclick ->
+    $(this).click ->
       $.get(qualifiedDest)
       .done (result) ->
         $("#primary_content").html(result)
