@@ -344,7 +344,8 @@ paperTabHandlers = function() {
     qualifiedDest = "page_contents/" + dest;
     return $(this).click(function() {
       return $.get(qualifiedDest).done(function(result) {
-        return $("#primary_content").html(result);
+        $("#primary_content").html(result);
+        return bindEvents();
       }).fail(function(result, error) {
         console.error("Could not load page", qualifiedDest);
         return console.warn(result, error);

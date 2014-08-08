@@ -40,6 +40,7 @@ paperTabHandlers = ->
       $.get(qualifiedDest)
       .done (result) ->
         $("#primary_content").html(result)
+        bindEvents()
       .fail (result,error) ->
         console.error("Could not load page",qualifiedDest)
         console.warn(result,error)
