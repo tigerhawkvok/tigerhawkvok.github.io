@@ -327,12 +327,24 @@ bindEvents = function() {
 };
 
 bindEmail = function() {
+  $("#send-mail").click(function() {
+    return $("#email-form").submit();
+  });
   return $("#email-form").submit(function() {
-    var from, fromName, message;
+    var args, from, fromName, message;
     from = $("#email");
     fromName = $("#name");
     message = $("#message");
-    return console.log("stuff");
+    args = "email=" + from + "&name=" + fromName + "&message=" + (encodeURIComponent(message));
+    console.log("stuff");
+    return $.post("bob.html", args, "json").done(function(result) {
+      return $("paper-toast").attr("text", "Email sent");
+    }).fail(function(result, error) {
+      $("paper-toast").attr("text", "Couldn't send the email. Please try again. (The server returned " + error + ")");
+      return console.warn(result, error);
+    }).always(function() {
+      return $("paper-toast")[0].show();
+    });
   });
 };
 

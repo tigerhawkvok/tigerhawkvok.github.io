@@ -25,11 +25,24 @@ bindEvents = ->
     console.log("No gapi to call")
 
 bindEmail = ->
+  $("#send-mail").click ->
+    $("#email-form").submit()
   $("#email-form").submit ->
     from = $("#email")
     fromName = $("#name")
     message = $("#message")
+    args = "email=#{from}&name=#{fromName}&message=#{encodeURIComponent(message)}"
     console.log("stuff")
+    # Post to my server
+    $.post("bob.html",args,"json")
+    .done (result) ->
+      # Clear
+      $("paper-toast").attr("text","Email sent")
+    .fail (result,error) ->
+      $("paper-toast").attr("text","Couldn't send the email. Please try again. (The server returned #{error})")
+      console.warn(result,error)
+    .always ->
+      $("paper-toast")[0].show()
 
 paperTabHandlers = ->
   console.log("Binding paper tabs")

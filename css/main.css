@@ -1,6 +1,8 @@
 header,nav,article,footer { display: block; }
 footer {
     position:relative;
+    text-align:center;
+    opacity:.6;
 }
 body {
     font-family:'Droid Sans',"Roboto"calibri,helvetica,tahoma,arial,sans-serif;
