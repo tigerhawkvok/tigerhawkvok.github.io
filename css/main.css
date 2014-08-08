@@ -107,7 +107,7 @@ nav {
 .materialbluegrey {
     background: #607d8b;
 }
-.g-person {
+.g-person,#___person_0 {
     float:right;
 }
 /* Helpers */
