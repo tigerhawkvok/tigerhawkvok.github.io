@@ -1,4 +1,7 @@
 header,nav,article,footer { display: block; }
+footer {
+    position:relative;
+}
 body {
     font-family:'Droid Sans',"Roboto"calibri,helvetica,tahoma,arial,sans-serif;
     display: -webkit-flex;
@@ -10,7 +13,7 @@ body {
     flex-direction: column;
     margin-top:0;
 }
-h1 {
+h1,h2 {
     font-family:'Roboto',"Droid Sans",calibri,helvetica,tahoma,arial,sans-serif;
     font-weight:100;
 }
@@ -27,6 +30,9 @@ header h1 {
     padding-left:1rem;
     margin:.5rem 1rem;
     float:left;
+}
+header h2 {
+    font-weight:300;
 }
 paper-button[raisedButton] {
     /* 
@@ -109,6 +115,11 @@ nav {
 }
 .g-person,#___person_0 {
     float:right !important;
+}
+
+footer paper-icon-button, footer paper-button {
+    position:relative;
+    bottom:-1em;
 }
 /* Helpers */
 .hide {
