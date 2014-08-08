@@ -18,7 +18,7 @@ header {
     color:white;
     position:fixed;
     width:100%;
-    z-index:500;
+    z-index:10;
 }
 header h1 {
     font-size:3.5rem;

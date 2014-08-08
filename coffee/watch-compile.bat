@@ -1,1 +1,0 @@
-coffee -j ../js/c.js -cw ./

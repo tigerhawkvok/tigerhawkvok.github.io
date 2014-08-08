@@ -12,14 +12,9 @@
     <link rel="import" href="bower_components/paper-elements/paper-menu-button.html"/>
     <link rel="import" href="bower_components/core-elements/core-elements.html"/>
     <link rel="import" href="polymer-elements/copyright-statement.html"/>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/loadJQuery.js"></script>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <script>
-      function toggleBTCDialog() {
-      var dialog = document.querySelector('paper-dialog');
-      dialog.toggle();
-      }
-    </script>
   </head>
   <body>
     <header class="materialteal">
@@ -29,31 +24,27 @@
             Public Consumption Projects
           </p>
           <ul id='projects'>
-            <li>Stronghash (PHP)</li>
-            <li>Userhandler (PHP)</li>
-            <li>Webify Directory (Python)</li>
-            <li>Embed Feeds (Wordpress)</li>
+            <li>Stronghash (PHP)<core-icon icon="launch" width="32"></core-icon></li>
+            <li>Userhandler (PHP)<core-icon icon="launch" width="32"></core-icon></li>
+            <li>Webify Directory (Python)<core-icon icon="launch" width="32"></core-icon></li>
+            <li>Embed Feeds (Wordpress)<core-icon icon="launch" width="32"></core-icon></li>
           </ul>
           <p>
             Personal / Niche Projects
           </p>
           <ul id='pprojects'>
-            <li>D&amp;D Cryptography puzzle (Python)</li>
-            <li>Animal Phylogeny</li>
-            <li>Simple Recipe Framework</li>
+            <li>D&amp;D Cryptography puzzle (Python)<core-icon icon="launch" width="32"></core-icon></li>
+            <li>Animal Phylogeny<core-icon icon="launch" width="32"></core-icon></li>
+            <li>Simple Recipe Framework<core-icon icon="launch" width="32"></core-icon></li>
           </ul>
           <p>
             Other Sites
           </p>
           <ul id='other'>
-            <li><a href='http://phylogeny.revealedsingularity.net'>Animal Phylogeny</a></li>
-            <li>Personal Page/Blog (Legacy)</li>
-            <li>Velociraptor Systems</li>
+            <li><a href='http://phylogeny.revealedsingularity.net'>Animal Phylogeny</a><core-icon icon="launch" width="32"></core-icon></li>
+            <li>Personal Page/Blog (Legacy)<core-icon icon="launch" width="32"></core-icon></li>
+            <li>Velociraptor Systems<core-icon icon="launch" width="32"></core-icon></li>
           </ul>
-          <p>
-            Social
-          </p>
-          <!-- Icons -->
           <p>
             Donate
           </p>
@@ -80,7 +71,7 @@
     <div id='container'>
       <paper-dialog heading="Bitcoin Address"  transition="paper-dialog-transition-bottom" backdrop layered>
         <span id='btc'>17WbB5ebHeyLo31KusdsY9wDQewj6dtUzT</span>
-        <paper-button label="close" dismissive autofocus></paper-button>
+        <paper-button label="Done" dismissive autofocus></paper-button>
       </paper-dialog>
       <article>
         <p>
