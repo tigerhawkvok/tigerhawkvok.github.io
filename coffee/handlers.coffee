@@ -63,7 +63,7 @@ renderTab = (selector) ->
     console.error("Could not load page",qualifiedDest)
     console.warn(result,error)
     $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
-    $("#general-status").show()
+    $("#general-status")[0].show()
 
 $ ->
   # Get the selected tab
