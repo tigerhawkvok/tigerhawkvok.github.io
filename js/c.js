@@ -316,6 +316,7 @@ openLink = function(url) {
 };
 
 paperTabHandlers = function() {
+  console.log("Binding paper tabs");
   return $("paper-tab").each(function() {
     var dest, qualifiedDest;
     dest = $(this).text().toLowerCase() + ".html";

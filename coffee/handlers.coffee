@@ -18,6 +18,7 @@ openLink = (url) ->
 
 
 paperTabHandlers = ->
+  console.log("Binding paper tabs")
   $("paper-tab").each ->
     dest = $(this).text().toLowerCase() + ".html"
     qualifiedDest = "page_contents/#{dest}"

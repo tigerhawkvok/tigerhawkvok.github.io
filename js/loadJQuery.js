@@ -14,7 +14,7 @@ function cascadeJQLoad(i) { // Use alternate CDNs where appropriate to load jQue
     ];
     // Paths to your libraries that require jQuery, relative to this file
     var dependent_libraries = [
-        "c.min.js"
+        "c.js"
     ];
     if (window.jQuery !== undefined) {
         i = jq_paths.length -1;
