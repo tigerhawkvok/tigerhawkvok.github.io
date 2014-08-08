@@ -370,7 +370,8 @@ renderTab = function(selector) {
   }).fail(function(result, error) {
     console.error("Could not load page", qualifiedDest);
     console.warn(result, error);
-    return $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
+    $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
+    return $("#general-status").show();
   });
 };
 

@@ -130,6 +130,20 @@ footer paper-icon-button, footer paper-button {
 footer paper-button:hover {
     box-shadow:0px 4px 10px 0 rgba(0,0,0,0.1), 0px 2px 10px 0px rgba(0,0,0,0.1)
 }
+#launchpad {
+    text-align:center;
+}
+#launchpad div {
+    display:inline-block;
+    text-align:center;
+}
+#launchpad img {
+    max-width:128px;
+    max-height:128px;
+    
+}
+
+
 /* Helpers */
 .hide {
     display: none!important;
