@@ -69,8 +69,14 @@
       </paper-tabs>
     </header>
     <div id='container'>
-      <paper-dialog heading="Bitcoin Address"  transition="paper-dialog-transition-bottom" backdrop layered>
+      <paper-dialog id="btc-dialog" heading="Bitcoin Address"  transition="paper-dialog-transition-bottom" backdrop layered>
         <span id='btc'>17WbB5ebHeyLo31KusdsY9wDQewj6dtUzT</span>
+        <paper-button label="Done" dismissive autofocus></paper-button>
+      </paper-dialog>
+      <paper-dialog id="pgp-dialog" heading="PGP Key" transition="paper-dialog-transition-bottom" backdrop layered>
+        <p>
+          
+        </p>
         <paper-button label="Done" dismissive autofocus></paper-button>
       </paper-dialog>
       <article>
@@ -84,7 +90,7 @@
     </div>
     <footer>
       <p>
-        <copyright-statement copyrightStart="2013"></copyright-statement> | <span id='contact'></span> | <span id='pgp'>PGP Key</span> | Written with <core-icon icon="polymer"></core-icon> | <paper-icon-button icon="social:post-gplus" onclick="openLink('https://plus.google.com/+PhilipKahn')"></paper-icon-button> <paper-icon-button icon="social:post-twitter"></paper-icon-button> <paper-icon-button icon="social:post-twitter" onclick="openLink('https://twitter.com/tigerhawkvok')"></paper-icon-button> <paper-icon-button icon="post-facebook" onclick="openLink('https://facebook.com/tigerhawkvok')"></paper-icon-button> <paper-icon-button icon="post-linkedin" onclick="openLink('')"></paper-icon-button>
+        <copyright-statement copyrightStart="2013"></copyright-statement> | <span id='contact'></span> | <paper-button icon="lock-outline" label="PGP Key"></paper-button> | Written with <core-icon icon="polymer"></core-icon> | <paper-icon-button icon="social:post-gplus" onclick="openLink('https://plus.google.com/+PhilipKahn')"></paper-icon-button> <paper-icon-button icon="social:post-twitter"></paper-icon-button> <paper-icon-button icon="social:post-twitter" onclick="openLink('https://twitter.com/tigerhawkvok')"></paper-icon-button> <paper-icon-button icon="post-facebook" onclick="openLink('https://facebook.com/tigerhawkvok')"></paper-icon-button> <paper-icon-button icon="post-linkedin" onclick="openLink('http://www.linkedin.com/pub/philip-kahn/91/a3b/7b4/')"></paper-icon-button>
       </p>
     </footer>
   </body>
