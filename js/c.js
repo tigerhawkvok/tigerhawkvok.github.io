@@ -360,8 +360,11 @@ paperTabHandlers = function() {
   });
 };
 
-renderTab = function(selector) {
+renderTab = function(selector, tabIndex) {
   var dest, qualifiedDest;
+  if (tabIndex == null) {
+    tabIndex = 0;
+  }
   dest = $(selector).text().toLowerCase() + ".html";
   qualifiedDest = "page_contents/" + dest;
   return $.get(qualifiedDest).done(function(result) {
@@ -371,7 +374,8 @@ renderTab = function(selector) {
     console.error("Could not load page", qualifiedDest);
     console.warn(result, error);
     $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
-    return $("#general-status")[0].show();
+    $("#general-status")[0].show();
+    return $("paper-tabs")[0].selected = tabIndex;
   });
 };
 
@@ -380,6 +384,6 @@ $(function() {
   tabIndex = $("paper-tabs")[0].selected;
   tab = $("paper-tab")[tabIndex];
   window.thisTab = tab;
-  renderTab(tab);
+  renderTab(tab, tabIndex);
   return paperTabHandlers();
 });

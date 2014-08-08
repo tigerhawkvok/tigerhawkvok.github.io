@@ -52,7 +52,7 @@ paperTabHandlers = ->
     $(this).click ->
       renderTab(this)
 
-renderTab = (selector) ->
+renderTab = (selector,tabIndex = 0) ->
   dest = $(selector).text().toLowerCase() + ".html"
   qualifiedDest = "page_contents/#{dest}"
   $.get(qualifiedDest)
@@ -64,12 +64,13 @@ renderTab = (selector) ->
     console.warn(result,error)
     $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
     $("#general-status")[0].show()
+    $("paper-tabs")[0].selected = tabIndex
 
 $ ->
-  # Get the selected tab
+  # Get the selected tabb
   tabIndex = $("paper-tabs")[0].selected
   tab = $("paper-tab")[tabIndex]
   window.thisTab = tab
-  renderTab(tab)
+  renderTab(tab,tabIndex)
   # Attach handlers
   paperTabHandlers()
