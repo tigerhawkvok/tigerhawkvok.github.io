@@ -179,6 +179,9 @@ footer paper-button:hover {
     max-height:128px;
     
 }
+#donate,#donate iframe, #donate form, #donate paper-button {
+    vertical-align:middle;
+}
 
 
 /* Helpers */
