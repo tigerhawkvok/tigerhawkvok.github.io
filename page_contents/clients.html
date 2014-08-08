@@ -4,7 +4,11 @@
   </h3>
   <div>
     <!-- Christine -->
-    <img src="assets/clients/cc_512.png"/>
+    <img src="assets/clients/cc_512.png" data-dialog-id="cc_dialog"/>
+    <paper-dialog id="cc_dialog" transition="paper-transition-bottom" heading="ChristineCarter.com" backdrop layered>
+      <paper-button label="Close" dismissive autofocus></paper-button>
+      <paper-button label="Visit" affirmative onclick="openLink('https://christinecarter.com')"></paper-button>
+    </paper-dialog>
   </div>
   <div>
     <!-- Science@Cal -->
