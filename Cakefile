@@ -37,7 +37,8 @@ task 'min', 'minify compiled *.js file', ->
   exec "java -jar #{config.yuic} #{outJS}.js -o #{outJS}.min.js", exerr
   
 task 'wjm', 'watch, join all, and compile changes in source dir, then minify', ->
-  watch = exec "coffee -j #{outJS}.js -cw #{config.srcDir}/"
+  # Does bare compilation!
+  watch = exec "coffee -bj #{outJS}.js -cw #{config.srcDir}/"
   watch.stdout.on 'data', (data) ->
     process.stdout.write data
     invoke 'min'
