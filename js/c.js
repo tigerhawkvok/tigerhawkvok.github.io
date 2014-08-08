@@ -318,6 +318,7 @@ openLink = function(url) {
 bindEvents = function() {
   var e;
   bindEmail();
+  bindIcons();
   try {
     return window.gapi.person.go();
   } catch (_error) {

@@ -19,6 +19,7 @@ openLink = (url) ->
 bindEvents = ->
   # Bind event handlers for pages
   bindEmail()
+  bindIcons()
   try
     window.gapi.person.go()
   catch e
