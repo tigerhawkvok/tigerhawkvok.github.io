@@ -136,6 +136,7 @@ footer paper-button:hover {
 #launchpad div {
     display:inline-block;
     text-align:center;
+    vertical-align:middle;
 }
 #launchpad img {
     max-width:128px;
