@@ -339,14 +339,14 @@ bindEmail = function() {
     args = "email=" + from + "&name=" + fromName + "&message=" + (encodeURIComponent(message));
     console.log("stuff");
     return $.post("bob.html", args, "json").done(function(result) {
-      return $("paper-toast").attr("text", "Email sent");
+      return $("#email-status").attr("text", "Email sent");
     }).fail(function(result, failError) {
       var error;
       error = "" + result.status + " - " + result.statusText;
-      $("paper-toast").attr("text", "Couldn't send the email. Please try again. (The server returned " + error + ")");
+      $("#email-status").attr("text", "Couldn't send the email. Please try again. (The server returned " + error + ")");
       return console.warn(result, failError, error);
     }).always(function() {
-      return $("paper-toast")[0].show();
+      return $("#email-status")[0].show();
     });
   });
 };
@@ -363,7 +363,8 @@ paperTabHandlers = function() {
         return bindEvents();
       }).fail(function(result, error) {
         console.error("Could not load page", qualifiedDest);
-        return console.warn(result, error);
+        console.warn(result, error);
+        return $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
       });
     });
   });

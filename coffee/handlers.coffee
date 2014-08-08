@@ -38,13 +38,13 @@ bindEmail = ->
     $.post("bob.html",args,"json")
     .done (result) ->
       # Clear
-      $("paper-toast").attr("text","Email sent")
+      $("#email-status").attr("text","Email sent")
     .fail (result,failError) ->
       error = "#{result.status} - #{result.statusText}"
-      $("paper-toast").attr("text","Couldn't send the email. Please try again. (The server returned #{error})")
+      $("#email-status").attr("text","Couldn't send the email. Please try again. (The server returned #{error})")
       console.warn(result,failError,error)
     .always ->
-      $("paper-toast")[0].show()
+      $("#email-status")[0].show()
 
 paperTabHandlers = ->
   console.log("Binding paper tabs")
@@ -59,6 +59,7 @@ paperTabHandlers = ->
       .fail (result,error) ->
         console.error("Could not load page",qualifiedDest)
         console.warn(result,error)
+        $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
 
 $ ->
   paperTabHandlers()
