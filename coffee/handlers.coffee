@@ -24,6 +24,12 @@ bindEvents = ->
   catch e
     console.log("No gapi to call")
 
+bindIcons = ->
+  $("#launchpad div img").each ->
+    dialogId = $(this).attr("data-dialog-id")
+    $(this).click ->
+      $("##{dialogId}")[0].toggle()
+
 bindEmail = ->
   $("#send-mail").click ->
     $("#email-form").submit()

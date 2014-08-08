@@ -104,21 +104,57 @@ nav ul {
     list-style-type:none;
     padding-left:1em;
 }
+
+.materialblue {
+    background:#5677fc;
+    color:#fff;
+}
+
 .materialindigo {
     background: #3f51b5;
+    color:#fff;
 }
 
 .materialcyan {
     background: #00bcd4;
+    color:#fff;
 }
 
 .materialteal {
     background: #009688;
+    color:#fff;
 }
 
 .materialbluegrey {
     background: #607d8b;
+    color:#fff;
 }
+
+.materialbluetext {
+    color:#5677fc;
+    
+}
+
+.materialindigotext {
+    color: #3f51b5;
+    
+}
+
+.materialcyantext {
+    color: #00bcd4;
+    
+}
+
+.materialtealtext {
+    color: #009688;
+    
+}
+
+.materialbluegreytext {
+    color: #607d8b;
+    
+}
+
 #g-container {
     float:right !important;
 }
