@@ -183,6 +183,9 @@ footer paper-button:hover {
     vertical-align:middle;
     display:inline-block;
 }
+#donate iframe {
+    padding-top:0.75em;
+}
 
 
 /* Helpers */
