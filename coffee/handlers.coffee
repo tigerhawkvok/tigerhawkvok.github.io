@@ -16,6 +16,20 @@ openLink = (url) ->
   window.open(url)
   false
 
+bindEvents = ->
+  # Bind event handlers for pages
+  bindEmail()
+  try
+    window.gapi.person.go()
+  catch e
+    console.log("No gapi to call")
+
+bindEmail = ->
+  $("#email-form").submit ->
+    from = $("#email")
+    fromName = $("#name")
+    message = $("#message")
+    console.log("stuff")
 
 paperTabHandlers = ->
   console.log("Binding paper tabs")
