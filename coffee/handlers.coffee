@@ -15,3 +15,19 @@ openLink = (url) ->
   if not url? then return false
   window.open(url)
   false
+
+
+paperTabHandlers = ->
+  $("paper-tab").each ->
+    dest = $(this).text().toLowerCase() + ".html"
+    qualifiedDest = "page_contents/#{dest}"
+    $(this).onclick ->
+      $.get(qualifiedDest)
+      .done (result) ->
+        $("#primary_content").html(result)
+      .fail (result,error) ->
+        console.error("Could not load page",qualifiedDest)
+        console.warn(result,error)
+
+$ ->
+  paperTabHandlers()
