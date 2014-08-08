@@ -354,7 +354,9 @@ bindEmail = function() {
 paperTabHandlers = function() {
   console.log("Binding paper tabs");
   return $("paper-tab").each(function() {
-    return renderTab(this);
+    return $(this).click(function() {
+      return renderTab(this);
+    });
   });
 };
 
@@ -362,15 +364,13 @@ renderTab = function(selector) {
   var dest, qualifiedDest;
   dest = $(selector).text().toLowerCase() + ".html";
   qualifiedDest = "page_contents/" + dest;
-  return $(selector).click(function() {
-    return $.get(qualifiedDest).done(function(result) {
-      $("#primary_content").html(result);
-      return bindEvents();
-    }).fail(function(result, error) {
-      console.error("Could not load page", qualifiedDest);
-      console.warn(result, error);
-      return $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
-    });
+  return $.get(qualifiedDest).done(function(result) {
+    $("#primary_content").html(result);
+    return bindEvents();
+  }).fail(function(result, error) {
+    console.error("Could not load page", qualifiedDest);
+    console.warn(result, error);
+    return $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
   });
 };
 
@@ -378,6 +378,7 @@ $(function() {
   var tab, tabIndex;
   tabIndex = $("paper-tabs")[0].selected;
   tab = $("paper-tab")[tabIndex];
+  window.thisTab = tab;
   renderTab(tab);
   return paperTabHandlers();
 });

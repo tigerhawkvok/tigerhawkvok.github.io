@@ -49,25 +49,26 @@ bindEmail = ->
 paperTabHandlers = ->
   console.log("Binding paper tabs")
   $("paper-tab").each ->
-    renderTab(this)
+    $(this).click ->
+      renderTab(this)
 
 renderTab = (selector) ->
   dest = $(selector).text().toLowerCase() + ".html"
   qualifiedDest = "page_contents/#{dest}"
-  $(selector).click ->
-    $.get(qualifiedDest)
-    .done (result) ->
-      $("#primary_content").html(result)
-      bindEvents()
-    .fail (result,error) ->
-      console.error("Could not load page",qualifiedDest)
-      console.warn(result,error)
-      $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
+  $.get(qualifiedDest)
+  .done (result) ->
+    $("#primary_content").html(result)
+    bindEvents()
+  .fail (result,error) ->
+    console.error("Could not load page",qualifiedDest)
+    console.warn(result,error)
+    $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
 
 $ ->
   # Get the selected tab
   tabIndex = $("paper-tabs")[0].selected
   tab = $("paper-tab")[tabIndex]
+  window.thisTab = tab
   renderTab(tab)
   # Attach handlers
   paperTabHandlers()
