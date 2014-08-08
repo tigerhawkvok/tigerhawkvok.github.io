@@ -100,6 +100,9 @@ nav {
     opacity:1!important;
     padding:.5em;
 }
+nav ul {
+    list-style-type:none;
+}
 .materialindigo {
     background: #3f51b5;
 }
