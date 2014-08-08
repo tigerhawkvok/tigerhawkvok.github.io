@@ -6,7 +6,7 @@ showPGPKey = ->
   $.get("tigerhawkvok_pgp_public_key.txt")
   .done (result) ->
     dialog = $("#pgp-dialog")
-    dialog_text = $("#pgp-dialog p")
+    dialog_text = $("#pgp-dialog pre")
     dialog.text(result)
     dialog[0].toggle()
   .fail ->

@@ -300,7 +300,7 @@ showPGPKey = function() {
   return $.get("tigerhawkvok_pgp_public_key.txt").done(function(result) {
     var dialog, dialog_text;
     dialog = $("#pgp-dialog");
-    dialog_text = $("#pgp-dialog p");
+    dialog_text = $("#pgp-dialog pre");
     dialog.text(result);
     return dialog[0].toggle();
   }).fail(function() {
