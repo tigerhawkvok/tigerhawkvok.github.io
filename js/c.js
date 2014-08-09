@@ -398,3 +398,71 @@ $(function() {
   renderTab(tab, tabIndex);
   return paperTabHandlers();
 });
+
+toggleBTCDialog = function() {
+  var dialog;
+  dialog = $("#btc-dialog")[0];
+  return dialog.toggle();
+};
+
+showPGPKey = function() {
+  return $.get("tigerhawkvok_pgp_public_key.txt").done(function(result) {
+    var dialog;
+    dialog = $("#pgp-dialog");
+    $("#pgp-dialog pre").text(result);
+    return dialog[0].toggle();
+  }).fail(function() {
+    return console.error("Could not get PGP key");
+  });
+};
+
+openLink = function(url) {
+  if (url == null) {
+    return false;
+  }
+  window.open(url);
+  return false;
+};
+
+bindEvents = function() {
+  var e;
+  bindEmail();
+  try {
+    return window.gapi.person.go();
+  } catch (_error) {
+    e = _error;
+    return console.log("No gapi to call");
+  }
+};
+
+bindEmail = function() {
+  return $("#email-form").submit(function() {
+    var from, fromName, message;
+    from = $("#email");
+    fromName = $("#name");
+    message = $("#message");
+    return console.log("stuff");
+  });
+};
+
+paperTabHandlers = function() {
+  console.log("Binding paper tabs");
+  return $("paper-tab").each(function() {
+    var dest, qualifiedDest;
+    dest = $(this).text().toLowerCase() + ".html";
+    qualifiedDest = "page_contents/" + dest;
+    return $(this).click(function() {
+      return $.get(qualifiedDest).done(function(result) {
+        $("#primary_content").html(result);
+        return bindEvents();
+      }).fail(function(result, error) {
+        console.error("Could not load page", qualifiedDest);
+        return console.warn(result, error);
+      });
+    });
+  });
+};
+
+$(function() {
+  return paperTabHandlers();
+});
