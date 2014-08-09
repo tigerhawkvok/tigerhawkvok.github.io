@@ -328,10 +328,12 @@ bindEvents = function() {
 };
 
 bindIcons = function() {
+  console.log("Binding icons");
   return $("#launchpad div img").each(function() {
     var dialogId;
     dialogId = $(this).attr("data-dialog-id");
     return $(this).click(function() {
+      console.log("Clicked for " + dialogId);
       return $("#" + dialogId)[0].toggle();
     });
   });
