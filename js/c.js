@@ -374,15 +374,17 @@ paperTabHandlers = function() {
 };
 
 renderTab = function(selector, tabIndex) {
-  var dest, qualifiedDest;
+  var dest, qualifiedDest, target;
   if (tabIndex == null) {
     tabIndex = 0;
   }
-  dest = $(selector).text().toLowerCase() + ".html";
+  target = $(selector).text().toLowerCase();
+  dest = "" + target + ".html";
   qualifiedDest = "page_contents/" + dest;
   return $.get(qualifiedDest).done(function(result) {
     $("#primary_content").html(result);
-    return bindEvents();
+    bindEvents();
+    return history.pushState({}, $(selector).text(), "#" + target);
   }).fail(function(result, error) {
     console.error("Could not load page", qualifiedDest);
     console.warn(result, error);
@@ -394,6 +396,7 @@ renderTab = function(selector, tabIndex) {
 
 $(function() {
   var tab, tabIndex;
+  $("primary_content").css("margin-top", $("header").height() + 5);
   tabIndex = $("paper-tabs")[0].selected;
   tab = $("paper-tab")[tabIndex];
   window.thisTab = tab;

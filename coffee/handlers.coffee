@@ -62,12 +62,15 @@ paperTabHandlers = ->
       renderTab(this)
 
 renderTab = (selector,tabIndex = 0) ->
-  dest = $(selector).text().toLowerCase() + ".html"
+  target = $(selector).text().toLowerCase()
+  dest =  "#{target}.html"
   qualifiedDest = "page_contents/#{dest}"
   $.get(qualifiedDest)
   .done (result) ->
     $("#primary_content").html(result)
     bindEvents()
+    # Push state
+    history.pushState({},$(selector).text(),"##{target}")
   .fail (result,error) ->
     console.error("Could not load page",qualifiedDest)
     console.warn(result,error)
@@ -76,7 +79,9 @@ renderTab = (selector,tabIndex = 0) ->
     $("paper-tabs")[0].selected = tabIndex
 
 $ ->
-  # Get the selected tabb
+  # Fix the height if it needs to be fixed
+  $("primary_content").css("margin-top",$("header").height()+5)
+  # Get the selected tab
   tabIndex = $("paper-tabs")[0].selected
   tab = $("paper-tab")[tabIndex]
   window.thisTab = tab
