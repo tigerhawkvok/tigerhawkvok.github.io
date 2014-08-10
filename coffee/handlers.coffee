@@ -63,6 +63,9 @@ paperTabHandlers = ->
 
 renderTab = (selector,tabIndex = 0) ->
   target = $(selector).text().toLowerCase()
+  if isNull(target)
+    # Just passed in the actual target thingy
+    target = selector
   dest =  "#{target}.html"
   qualifiedDest = "page_contents/#{dest}"
   $.get(qualifiedDest)
@@ -81,9 +84,13 @@ renderTab = (selector,tabIndex = 0) ->
 $ ->
   # Fix the height if it needs to be fixed
   $("primary_content").css("margin-top",$("header").height()+5)
-  # Get the selected tab
-  tabIndex = $("paper-tabs")[0].selected
-  tab = $("paper-tab")[tabIndex]
+  # If the address is calling to a tab, try to render it
+  if window.location.hash?
+    tab = window.location.hash
+  else
+    # Get the selected tab
+    tabIndex = $("paper-tabs")[0].selected
+    tab = $("paper-tab")[tabIndex]
   window.thisTab = tab
   renderTab(tab,tabIndex)
   # Attach handlers

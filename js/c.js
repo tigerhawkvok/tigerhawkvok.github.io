@@ -379,6 +379,9 @@ renderTab = function(selector, tabIndex) {
     tabIndex = 0;
   }
   target = $(selector).text().toLowerCase();
+  if (isNull(target)) {
+    target = selector;
+  }
   dest = "" + target + ".html";
   qualifiedDest = "page_contents/" + dest;
   return $.get(qualifiedDest).done(function(result) {
@@ -397,8 +400,12 @@ renderTab = function(selector, tabIndex) {
 $(function() {
   var tab, tabIndex;
   $("primary_content").css("margin-top", $("header").height() + 5);
-  tabIndex = $("paper-tabs")[0].selected;
-  tab = $("paper-tab")[tabIndex];
+  if (window.location.hash != null) {
+    tab = window.location.hash;
+  } else {
+    tabIndex = $("paper-tabs")[0].selected;
+    tab = $("paper-tab")[tabIndex];
+  }
   window.thisTab = tab;
   renderTab(tab, tabIndex);
   return paperTabHandlers();
