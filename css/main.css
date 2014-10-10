@@ -3,6 +3,7 @@ footer {
     position:relative;
     text-align:center;
     opacity:.6;
+    clear:both;
 }
 body {
     font-family:'Droid Sans',"Roboto"calibri,helvetica,tahoma,arial,sans-serif;

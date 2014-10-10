@@ -77,6 +77,7 @@ renderTab = (selector,tabIndex = 0) ->
   .fail (result,error) ->
     console.error("Could not load page",qualifiedDest)
     console.warn(result,error)
+    consoel.warn("Got tab:",tabIndex,target,selector)
     $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
     $("#general-status")[0].show()
     $("paper-tabs")[0].selected = tabIndex
@@ -85,10 +86,11 @@ $ ->
   # Fix the height if it needs to be fixed
   $("primary_content").css("margin-top",$("header").height()+5)
   # If the address is calling to a tab, try to render it
-  if window.location.hash?
+  if not isNull(window.location.hash)
     tab = window.location.hash
-  else
+  if isNull(tab)
     # Get the selected tab
+    console.log("Rendering default tab")
     tabIndex = $("paper-tabs")[0].selected
     tab = $("paper-tab")[tabIndex]
   window.thisTab = tab

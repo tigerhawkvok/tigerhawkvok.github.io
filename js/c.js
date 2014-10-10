@@ -391,6 +391,7 @@ renderTab = function(selector, tabIndex) {
   }).fail(function(result, error) {
     console.error("Could not load page", qualifiedDest);
     console.warn(result, error);
+    consoel.warn("Got tab:", tabIndex, target, selector);
     $("#general-status").attr("text", "There was a problem switching tabs. Please try again.");
     $("#general-status")[0].show();
     return $("paper-tabs")[0].selected = tabIndex;
@@ -400,9 +401,11 @@ renderTab = function(selector, tabIndex) {
 $(function() {
   var tab, tabIndex;
   $("primary_content").css("margin-top", $("header").height() + 5);
-  if (window.location.hash != null) {
+  if (!isNull(window.location.hash)) {
     tab = window.location.hash;
-  } else {
+  }
+  if (isNull(tab)) {
+    console.log("Rendering default tab");
     tabIndex = $("paper-tabs")[0].selected;
     tab = $("paper-tab")[tabIndex];
   }
