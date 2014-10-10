@@ -95,6 +95,7 @@ paper-menu-button {
 }
 article {
     flex: 1 0 0;
+    height:100%;
 }
 nav {
     flex: .3 0 0;
