@@ -149,7 +149,7 @@ nav ul {
     color: #607d8b;
     
 }
-.resetcolor, paper-menu-button paper-item {
+.resetcolor, paper-menu-button paper-item, paper-menu-button p {
     color:#000;
     background:inherit;
 }
