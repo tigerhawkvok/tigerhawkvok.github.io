@@ -81,7 +81,7 @@ paper-button[raisedButton].colored::shadow #focusBg {
     display: -ms-flexbox;
     display: flex;
 
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-top: 9em;
 }
 

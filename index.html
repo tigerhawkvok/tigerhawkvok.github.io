@@ -25,20 +25,21 @@
       <h1>Philip Kahn</h1>
       <h2>Web developer, mobile applications, biologist, and astrophysicist</h2>
       <br class="clear"/>
-      <paper-menu-button icon="menu" valign="bottom">
-        <nav>
-          <p>
+      <paper-menu-button>
+        <paper-icon-button icon="menu" noink></paper-icon-button>
+        <paper-dropdown class="dropdown">
+          <core-menu class="menu">
+          <paper-item>
             <a href="projects.html">Projcts</a>
-          </p>
+          </paper-item>
           <p>
             Other Sites
           </p>
-          <ul id='other'>
-            <li><a href='http://phylogeny.revealedsingularity.net'>Animal Phylogeny</a><core-icon icon="launch" width="32"></core-icon></li>
-            <li>Personal Page/Blog (Legacy)<core-icon icon="launch" width="32"></core-icon></li>
-            <li>Velociraptor Systems<core-icon icon="launch" width="32"></core-icon></li>
-          </ul>
-        </nav>
+            <paper-item><a href='http://phylogeny.revealedsingularity.net'>Animal Phylogeny</a><core-icon icon="launch" width="32"></core-icon></paper-item>
+            <paper-item>Personal Page/Blog (Legacy)<core-icon icon="launch" width="32"></core-icon></paper-item>
+            <paper-item>Velociraptor Systems<core-icon icon="launch" width="32"></core-icon></paper-item>
+        </core-menu>
+        </paper-dropdown>
         </paper-menu-button>
       <paper-tabs selected="0" noink>
         <paper-tab>About</paper-tab>
