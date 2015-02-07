@@ -380,7 +380,7 @@ renderTab = function(selector, tabIndex) {
   }
   target = $(selector).text().toLowerCase();
   if (isNull(target)) {
-    target = selector;
+    target = selector.replace("#", "");
     if (isNull(target)) {
       target = "about";
     }
