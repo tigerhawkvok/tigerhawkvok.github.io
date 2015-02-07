@@ -149,9 +149,9 @@ nav ul {
     color: #607d8b;
     
 }
-.resetcolor {
+.resetcolor, paper-menu-button paper-item {
     color:#000;
-    background:initial;
+    background:inherit;
 }
 #g-container {
     float:right !important;
