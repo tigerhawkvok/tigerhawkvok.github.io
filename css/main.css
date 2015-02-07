@@ -157,9 +157,13 @@ nav ul {
     float:right !important;
 }
 
-footer paper-icon-button, footer paper-button {
+footer paper-icon-button {
     position:relative;
     bottom:-1em;
+} 
+footer paper-button {
+    position:relative;
+    bottom:-0.5em;
 }
 footer paper-button:hover {
     box-shadow:0px 4px 10px 0 rgba(0,0,0,0.1), 0px 2px 10px 0px rgba(0,0,0,0.1)
