@@ -66,6 +66,8 @@ renderTab = (selector,tabIndex = 0) ->
   if isNull(target)
     # Just passed in the actual target thingy
     target = selector
+    if isNull(target)
+      target = "about"
   dest =  "#{target}.html"
   qualifiedDest = "page_contents/#{dest}"
   $.get(qualifiedDest)
@@ -77,7 +79,7 @@ renderTab = (selector,tabIndex = 0) ->
   .fail (result,error) ->
     console.error("Could not load page",qualifiedDest)
     console.warn(result,error)
-    consoel.warn("Got tab:",tabIndex,target,selector)
+    console.warn("Got tab:",tabIndex,target,selector)
     $("#general-status").attr("text","There was a problem switching tabs. Please try again.")
     $("#general-status")[0].show()
     $("paper-tabs")[0].selected = tabIndex
