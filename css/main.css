@@ -73,15 +73,6 @@ paper-button[raisedButton].colored::shadow #focusBg {
 }
 #container
 {    
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 0;
-
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-
-    /* overflow: hidden; */
     margin-top: 9em;
 }
 
