@@ -149,7 +149,10 @@ nav ul {
     color: #607d8b;
     
 }
-
+.resetcolor {
+    color:#000;
+    background:initial;
+}
 #g-container {
     float:right !important;
 }
