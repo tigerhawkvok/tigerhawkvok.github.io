@@ -374,13 +374,18 @@ paperTabHandlers = function() {
 };
 
 renderTab = function(selector, tabIndex) {
-  var dest, qualifiedDest, target;
+  var dest, e, qualifiedDest, target;
   if (tabIndex == null) {
     tabIndex = 0;
   }
   target = $(selector).text().toLowerCase();
   if (isNull(target)) {
-    target = selector.replace("#", "");
+    try {
+      target = selector.replace("#", "");
+    } catch (_error) {
+      e = _error;
+      target = null;
+    }
     if (isNull(target)) {
       target = "about";
     }

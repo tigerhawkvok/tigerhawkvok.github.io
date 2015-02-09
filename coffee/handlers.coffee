@@ -65,7 +65,10 @@ renderTab = (selector,tabIndex = 0) ->
   target = $(selector).text().toLowerCase()
   if isNull(target)
     # Just passed in the actual target thingy
-    target = selector.replace("#","")
+    try
+      target = selector.replace("#","")
+    catch e
+      target = null
     if isNull(target)
       target = "about"
   dest =  "#{target}.html"
